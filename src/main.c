@@ -6,7 +6,7 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 12:04:39 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/01 19:04:38 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/02 21:03:25 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void		output(int var)
 		write(1, "Empty file\n", 17);
 	else if (var == 6)
 		write(1, "could not allocate memory\n", 26);
+	else if (var == 7)
+		write(1, "Wrong map!\n", 11);
+	else if (var == 8)
+		write(1, "Window's creating failed\n", 25);
 	exit (0);
 }
 
@@ -44,9 +48,7 @@ int			main(int ac, char **av)
 	if (ac == 2)
 	{
 		valid_map(&mlx, av[1]);
-		// mlx.mlx_ptr = mlx_init();
-		// mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, 1000, 750, "The Best FDF");
-		// mlx_loop(mlx.mlx_ptr);
+		window_init(&mlx);
 		// mlx_key_hook(mlx.win_ptr, )
 		output(0);
 	}

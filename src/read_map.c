@@ -6,7 +6,7 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 17:13:18 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/01 17:13:34 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/02 18:56:09 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void			check_buf(char *buf)
 
 		if (!(ft_strchr("-0123456789 ,xabcdefABCDEF\n", buf[i])))
 			output(4);
-		if (buf[i] == ',')
-			we_got_comma(buf, i);
-		else if (buf[i] == 'x')
-			we_got_x(buf, i);
+		// if (buf[i] == ',')
+		// 	we_got_comma(buf, i);
+		// else if (buf[i] == 'x')
+		// 	we_got_x(buf, i);
 	}
 }
 
