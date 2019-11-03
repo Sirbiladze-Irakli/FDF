@@ -6,7 +6,7 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 12:04:39 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/02 21:03:25 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/03 21:01:06 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		output(int var)
 {
 	if (var == 1)
-		write(1, "Usage ./fdf [File]\n", 26);
+		write(1, "Usage ./fdf [File]\n", 19);
 	else if (var == 2)
 		write(1, "File descriptor asignment error.\n", 33);
 	else if (var == 3)
@@ -30,7 +30,7 @@ void		output(int var)
 		write(1, "Wrong map!\n", 11);
 	else if (var == 8)
 		write(1, "Window's creating failed\n", 25);
-	exit (0);
+	exit(0);
 }
 
 void		init_struct(t_fdf *mlx)
@@ -49,7 +49,6 @@ int			main(int ac, char **av)
 	{
 		valid_map(&mlx, av[1]);
 		window_init(&mlx);
-		// mlx_key_hook(mlx.win_ptr, )
 		output(0);
 	}
 	output(1);

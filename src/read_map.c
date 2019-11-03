@@ -6,7 +6,7 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 17:13:18 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/02 18:56:09 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/03 21:40:02 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ void			read_map(t_fdf *mlx, int fd)
 		if (ret < 0)
 			output(3);
 		buf[ret] = '\0';
-		check_buf(buf);
 		ft_join_free((char **)&(mlx->line_map), buf);
 	}
+	check_buf(mlx->line_map);
 	if (ret == 0 && (!mlx->line_map))
 		output(5);
-	
 }
 
 void			check_buf(char *buf)
@@ -38,13 +37,8 @@ void			check_buf(char *buf)
 	i = -1;
 	while (buf[++i])
 	{
-
 		if (!(ft_strchr("-0123456789 ,xabcdefABCDEF\n", buf[i])))
 			output(4);
-		// if (buf[i] == ',')
-		// 	we_got_comma(buf, i);
-		// else if (buf[i] == 'x')
-		// 	we_got_x(buf, i);
 	}
 }
 

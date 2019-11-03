@@ -6,7 +6,7 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 16:43:04 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/02 16:46:05 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/03 20:34:17 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@
 # define GREY 0xd3d3d3
 # define BROWN 0x996633
 # define TRANSPARENT 0x77000000
-
 
 #endif

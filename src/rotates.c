@@ -6,13 +6,13 @@
 /*   By: jormond- <jormond-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 19:58:26 by jormond-          #+#    #+#             */
-/*   Updated: 2019/11/02 20:33:40 by jormond-         ###   ########.fr       */
+/*   Updated: 2019/11/03 20:45:25 by jormond-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void        	rotate_x(int side, t_fdf *mlx)
+void			rotate_x(int side, t_fdf *mlx)
 {
 	int		i;
 	double	n;
@@ -22,14 +22,13 @@ void        	rotate_x(int side, t_fdf *mlx)
 	i = -1;
 	while (++i < mlx->len)
 	{
-		y = mlx->map[i]->y - mlx->map_y / 2;
-		mlx->map[i]->y = mlx->map_y / 2 + y * cos(n) 
-			+ mlx->map[i]->z * sin(n);
-		mlx->map[i]->z = -y * sin(n) + mlx->map[i]->z * cos(n);
+		y = Y - mlx->map_y / 2;
+		Y = mlx->map_y / 2 + y * cos(n) + Z * sin(n);
+		Z = -y * sin(n) + Z * cos(n);
 	}
 }
 
-void        	rotate_y(int side, t_fdf *mlx)
+void			rotate_y(int side, t_fdf *mlx)
 {
 	int		i;
 	double	n;
@@ -39,10 +38,9 @@ void        	rotate_y(int side, t_fdf *mlx)
 	i = -1;
 	while (++i < mlx->len)
 	{
-		x = mlx->map[i]->x - mlx->map_y / 2;
-		mlx->map[i]->x = mlx->map_y / 2 + x * cos(n)
-			+ mlx->map[i]->z * sin(n);
-		mlx->map[i]->z = -x * sin(n) + mlx->map[i]->z * cos(n);
+		x = X - mlx->map_x / 2;
+		X = mlx->map_x / 2 + x * cos(n) + Z * sin(n);
+		Z = -x * sin(n) + Z * cos(n);
 	}
 }
 
@@ -57,10 +55,10 @@ void			rotate_z(int side, t_fdf *mlx)
 	i = -1;
 	while (++i < mlx->len)
 	{
-		x = mlx->map[i]->x - mlx->map_y / 2;
-		y = mlx->map[i]->x - mlx->map_x / 2;
-		mlx->map[i]->x = (mlx->map_y / 2) + (x * cos(n)) - (y * sin(n));
-		mlx->map[i]->y = (mlx->map_y / 2) + (x * sin(n)) + (y * cos(n));
+		x = X - mlx->map_x / 2;
+		y = Y - mlx->map_y / 2;
+		X = mlx->map_x / 2 + x * cos(n) - y * sin(n);
+		Y = mlx->map_y / 2 + x * sin(n) + y * cos(n);
 	}
 }
 
